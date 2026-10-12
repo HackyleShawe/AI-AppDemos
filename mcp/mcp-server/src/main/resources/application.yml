@@ -1,0 +1,22 @@
+server:
+  port: 9797
+
+spring:
+  application:
+    name: weather-mcp-server
+  ai:
+    mcp:
+      server:
+        enabled: true
+        name: mcp-server
+        version: 1.0.0  # MCP Server 版本
+        protocol: STREAMABLE  # 对外暴露方式：Streamable HTTP
+        capabilities: # 开启 Tool 能力
+          tool: true
+          resource: false
+          prompt: false
+          completion: false
+        annotation-scanner: # 开启注解扫描
+          enabled: true
+        streamable-http: # MCP Endpoint
+          mcp-endpoint: /mcp
