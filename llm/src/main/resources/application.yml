@@ -1,0 +1,19 @@
+server:
+  port: 9898
+  servlet:
+    context-path: /
+    encoding:
+      enabled: true
+      charset: utf-8
+      force: true
+
+spring:
+  application:
+    name: llm-invoke-llm
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen3.5
+        #options:
+        #  temperature: 0.6
