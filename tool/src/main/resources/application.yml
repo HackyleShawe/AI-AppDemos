@@ -1,0 +1,18 @@
+server:
+  port: 9798
+
+spring:
+  application:
+    name: function-calling-demo
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen3.5
+#    dashscope:
+#      # 百炼平台获取：https://bailian.console.aliyun.com/cn-beijing?tab=costing-balance#/costing-balance/free-quota
+#      api-key: sk-ws-H.RXXLDXL.4wZX.MEUCIQCIKHw0wShRYceTH3GNlxM1I_f_i9R4sP25nYRrNBLidQIgfsUdkPMUVdaAQm7XdNwkNF1GGYOaD-abLNJPe_cFgBY
+#      # base-url: https://dashscope.aliyuncs.com/compatible-mode/v1 默认内置了阿里的调用链接
+#      chat:
+#        options:
+#          model: glm-5
