@@ -1,0 +1,54 @@
+server:
+  port: 9898
+  servlet:
+    context-path: /
+    encoding:
+      enabled: true
+      charset: utf-8
+      force: true
+
+spring:
+  application:
+    name: llm-invoke-llm
+  ai:
+    deepseek:
+      api-key: xx
+      base-url: xxx.com
+      chat:
+        options:
+          model: deepseek-chat
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen3.5
+        #options:
+        #  temperature: 0.6
+    dashscope:
+      # 百炼平台获取：https://bailian.console.aliyun.com/cn-beijing?tab=costing-balance#/costing-balance/free-quota
+      api-key: sk-ws-H.RXXLDXL.4wZX.MEUCIQCIKHw0wShRYceTH3GNlxM1I_f_i9R4sP25nYRrNBLidQIgfsUdkPMUVdaAQm7XdNwkNF1GGYOaD-abLNJPe_cFgBY
+      # base-url: https://dashscope.aliyuncs.com/compatible-mode/v1 默认内置了阿里的调用链接
+      chat:
+        options:
+          model: glm-5
+    chat:
+      memory: #对话持久化
+        repository:
+          jdbc:
+            initialize-schema: always #自动创建ChatMemory存储的表结构：spring_ai_chat_memory
+            platform: mariadb #告诉框架当前数据库是 MariaDB/MySQL，
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ai?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: hackyle
+
+mybatis-plus:
+  configuration:
+    #这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #配置扫描xml
+  mapper-locations: classpath:/mapper/*.xml
+  #别名包扫描路径，通过该属性可以给包中的类注册别名，多个package用逗号或者分号分隔
+  type-aliases-package: com.hackyle.boot.entity
+
