@@ -1,4 +1,4 @@
-package com.ks.ai.agent.mcp.server.client.demo;
+package com.ks.ai.agent.mcp.client.http;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.ollama.OllamaChatModel;

@@ -1,4 +1,4 @@
-package com.ks.ai.agent.mcp.server.client;
+package com.ks.ai.agent.mcp.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class WeatherServer {
 
     //告诉 MCP Server：这个 Java 方法可以作为一个 Tool 暴露出去。
-    //SpringAI 1.x 没有MCP相关
+    //SpringAI 1.x 没有McpTool
     @McpTool(name = "weather", description = "查询指定城市当前天气")
     public String weather(
             @McpToolParam(description = "城市名称，例如 Beijing、Shanghai、Tokyo", required = true ) String city ) {
